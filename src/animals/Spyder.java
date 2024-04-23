@@ -1,9 +1,12 @@
 package animals;
 
+import interfaces.Goable;
+import interfaces.Swimable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class Spyder extends Animal{
+public class Spyder extends Animal implements Goable, Swimable {
     private int legsCount;
 
     public Spyder(String name, LocalDate birthDate, List<String> vaccinations, String illness, String owner, int legsCount) {
@@ -15,9 +18,15 @@ public class Spyder extends Animal{
         return  legsCount;
     }
 
+    @Override
+    public double run() {
+        System.out.printf("%s run\n", getType());
+        return 3;
+    }
 
     @Override
-    public boolean ifFly() {
-        return false;
+    public double swim() {
+        System.out.printf("%s swim\n", getType());
+        return 2;
     }
 }

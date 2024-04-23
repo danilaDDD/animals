@@ -9,6 +9,7 @@ public class Animal {
     private List<String> vaccinations;
     private String illness;
     private String owner;
+    private String type;
 
     public Animal(String name, LocalDate birthDate, List<String> vaccinations, String illness, String owner) {
         this.name = name;
@@ -16,6 +17,7 @@ public class Animal {
         this.vaccinations = vaccinations;
         this.illness = illness;
         this.owner = owner;
+        this.type = getClass().getName();
     }
 
 
@@ -39,27 +41,7 @@ public class Animal {
         return owner;
     }
 
-    public void toGo(){
-        System.out.println("go");
-    }
-
-    public boolean ifToGo(){
-        return true;
-    }
-
-    public void fly(){
-        System.out.println("fly");
-    }
-
-    public boolean ifFly(){
-        return true;
-    }
-
-    public void swim(){
-        System.out.println("swim");
-    }
-
-    public boolean ifSwim(){
-        return true;
+    public String getType() {
+        return type;
     }
 }

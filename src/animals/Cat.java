@@ -1,9 +1,12 @@
 package animals;
 
+import interfaces.Goable;
+import interfaces.Swimable;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class Cat extends Animal{
+public class Cat extends Animal implements Goable, Swimable {
     private int legsCount;
     public Cat(String name, LocalDate birthDate, List<String> vaccinations,
                String illness, String owner, int legsCount) {
@@ -15,14 +18,15 @@ public class Cat extends Animal{
         return legsCount;
     }
 
-
     @Override
-    public boolean ifFly() {
-        return false;
+    public double run() {
+        System.out.printf("%s run\n", getType());
+        return 10;
     }
 
     @Override
-    public boolean ifSwim() {
-        return false;
+    public double swim() {
+        System.out.printf("%s swim\n", getType());
+        return 3;
     }
 }
